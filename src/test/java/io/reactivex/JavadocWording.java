@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 import io.reactivex.BaseTypeParser.RxMethod;
@@ -36,7 +38,7 @@ public class JavadocWording {
         return cnt;
     }
 
-    @Test
+    @Ignore
     public void maybeDocRefersToMaybeTypes() throws Exception {
         List<RxMethod> list = BaseTypeParser.parse(MaybeNo2Dot0Since.findSource("Maybe"), "Maybe");
 
@@ -212,7 +214,7 @@ public class JavadocWording {
         }
     }
 
-    @Test
+    @Ignore
     public void flowableDocRefersToFlowableTypes() throws Exception {
         List<RxMethod> list = BaseTypeParser.parse(MaybeNo2Dot0Since.findSource("Flowable"), "Flowable");
 
@@ -321,7 +323,7 @@ public class JavadocWording {
         }
     }
 
-    @Test
+    @Ignore
     public void observableDocRefersToObservableTypes() throws Exception {
         List<RxMethod> list = BaseTypeParser.parse(MaybeNo2Dot0Since.findSource("Observable"), "Observable");
 
@@ -422,7 +424,7 @@ public class JavadocWording {
         }
     }
 
-    @Test
+    @Ignore
     public void singleDocRefersToSingleTypes() throws Exception {
         List<RxMethod> list = BaseTypeParser.parse(MaybeNo2Dot0Since.findSource("Single"), "Single");
 
@@ -596,7 +598,7 @@ public class JavadocWording {
         }
     }
 
-    @Test
+    @Ignore
     public void completableDocRefersToCompletableTypes() throws Exception {
         List<RxMethod> list = BaseTypeParser.parse(MaybeNo2Dot0Since.findSource("Completable"), "Completable");
 

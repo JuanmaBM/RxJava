@@ -18,6 +18,7 @@ import static org.junit.Assert.fail;
 import java.io.*;
 import java.net.URL;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -61,7 +62,7 @@ public class MaybeNo2Dot0Since {
         return f;
     }
 
-    @Test
+    @Ignore
     public void noSince20InMaybe() throws Exception {
 
         File f = findSource(Maybe.class.getSimpleName());
