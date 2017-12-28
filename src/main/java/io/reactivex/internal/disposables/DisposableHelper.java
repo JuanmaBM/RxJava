@@ -118,7 +118,7 @@ public enum DisposableHelper implements Disposable {
     public static boolean dispose(AtomicReference<Disposable> field) {
         Disposable current = field.get();
         Disposable d = DISPOSED;
-        if (current != d) {
+        if (d.equals(current)) {
             current = field.getAndSet(d);
             if (current != d) {
                 if (current != null) {

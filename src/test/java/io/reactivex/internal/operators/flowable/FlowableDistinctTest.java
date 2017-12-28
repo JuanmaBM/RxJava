@@ -42,7 +42,7 @@ public class FlowableDistinctTest {
     final Function<String, String> TO_UPPER_WITH_EXCEPTION = new Function<String, String>() {
         @Override
         public String apply(String s) {
-            if (s.equals("x")) {
+            if ("x".equals(s)) {
                 return "XX";
             }
             return s.toUpperCase();

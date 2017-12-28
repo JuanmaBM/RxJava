@@ -120,17 +120,15 @@ public final class FlowableAmb<T> extends Flowable<T> {
 
         public boolean win(int index) {
             int w = winner.get();
-            if (w == 0) {
-                if (winner.compareAndSet(0, index)) {
-                    AmbInnerSubscriber<T>[] a = subscribers;
-                    int n = a.length;
-                    for (int i = 0; i < n; i++) {
-                        if (i + 1 != index) {
-                            a[i].cancel();
-                        }
+            if (w == 0 && winner.compareAndSet(0, index)) {
+                AmbInnerSubscriber<T>[] a = subscribers;
+                int n = a.length;
+                for (int i = 0; i < n; i++) {
+                    if (i + 1 != index) {
+                        a[i].cancel();
                     }
-                    return true;
                 }
+                return true;
             }
             return false;
         }

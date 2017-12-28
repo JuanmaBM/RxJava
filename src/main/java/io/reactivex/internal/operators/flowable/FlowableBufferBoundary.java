@@ -212,10 +212,8 @@ extends AbstractFlowableWithUpstream<T, U> {
         }
 
         void openFinished(Disposable d) {
-            if (resources.remove(d)) {
-                if (windows.decrementAndGet() == 0) {
-                    complete();
-                }
+            if (resources.remove(d) && windows.decrementAndGet() == 0) {
+                complete();
             }
         }
 
@@ -230,10 +228,8 @@ extends AbstractFlowableWithUpstream<T, U> {
                 fastPathOrderedEmitMax(b, false, this);
             }
 
-            if (resources.remove(d)) {
-                if (windows.decrementAndGet() == 0) {
-                    complete();
-                }
+            if (resources.remove(d) && windows.decrementAndGet() == 0) {
+                complete();
             }
         }
     }
